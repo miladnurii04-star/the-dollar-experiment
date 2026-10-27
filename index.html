@@ -97,53 +97,248 @@ footer {
     This is an independent experiment in generosity.
     If you like the idea, you can participate voluntarily
     or share this page with others.
-  </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b12">
+  <meta name="description" content="The $1 Experiment — a global voluntary donation experiment. Every contribution is optional.">
+  <title>The $1 Experiment | One World, One Dollar</title>
+  <style>
+    * { box-sizing: border-box; }
+    :root {
+      --bg: #090b12;
+      --panel: #111522;
+      --text: #f7f8fc;
+      --muted: #9ba4b7;
+      --green: #a3ffbf;
+      --border: rgba(255,255,255,.1);
+    }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 50% 0%, #193b35 0%, transparent 48%),
+        var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+    .wrap { width: min(920px, 92%); margin: auto; }
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 24px 0;
+    }
+    .logo { font-size: 14px; font-weight: 800; letter-spacing: 2px; }
+    .badge {
+      border: 1px solid var(--border); border-radius: 99px;
+      padding: 7px 12px; font-size: 11px; color: var(--green);
+    }
+    .hero { text-align: center; padding: 60px 0 35px; }
+    .eyebrow {
+      color: var(--green); text-transform: uppercase;
+      letter-spacing: 3px; font-size: 11px; font-weight: bold;
+    }
+    h1 {
+      font-size: clamp(42px, 9vw, 82px);
+      line-height: 1.02; letter-spacing: -3px;
+      margin: 22px 0;
+    }
+    h1 span { color: var(--green); }
+    .intro {
+      color: var(--muted); max-width: 570px;
+      margin: 0 auto; font-size: 17px;
+    }
+    .card {
+      background: rgba(17,21,34,.94);
+      border: 1px solid var(--border); border-radius: 22px;
+      padding: clamp(22px, 5vw, 38px);
+      margin: 25px auto; max-width: 650px;
+      box-shadow: 0 20px 80px rgba(0,0,0,.22);
+    }
+    .label { color: var(--muted); font-size: 12px; letter-spacing: 1px; }
+    .goal {
+      font-size: clamp(42px, 10vw, 64px); font-weight: 800;
+      letter-spacing: -2px; margin: 5px 0 0;
+    }
+    .goal small { font-size: 16px; color: var(--muted); letter-spacing: 0; }
+    .note { font-size: 12px; color: var(--muted); margin-top: 0; }
+    .divider { height: 1px; background: var(--border); margin: 26px 0; }
+    .network {
+      display: inline-block; color: var(--green);
+      background: rgba(163,255,191,.08);
+      border: 1px solid rgba(163,255,191,.2);
+      border-radius: 7px; padding: 5px 9px;
+      font-size: 11px; font-weight: bold; margin: 10px 0 14px;
+    }
+    .wallet {
+      overflow-wrap: anywhere; background: #090c14;
+      border: 1px solid var(--border); border-radius: 10px;
+      padding: 15px; color: #d8deeb; font-size: 13px;
+      line-height: 1.8;
+    }
+    button, .share {
+      display: block; width: 100%; border: 0; border-radius: 10px;
+      padding: 15px; font-size: 14px; font-weight: bold;
+      cursor: pointer; text-align: center; text-decoration: none;
+    }
+    button {
+      margin-top: 12px; background: var(--green); color: #08130c;
+    }
+    .share {
+      margin-top: 10px; color: var(--text);
+      border: 1px solid var(--border); background: transparent;
+    }
+    .small { font-size: 12px; color: var(--muted); margin-top: 13px; }
+    .steps {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 12px; margin: 40px 0;
+    }
+    .step {
+      border: 1px solid var(--border); border-radius: 14px;
+      padding: 18px; background: rgba(255,255,255,.025);
+    }
+    .number { color: var(--green); font-size: 12px; font-weight: bold; }
+    .step h3 { font-size: 15px; margin: 9px 0 5px; }
+    .step p { font-size: 12px; color: var(--muted); margin: 0; }
+    .disclaimer {
+      border: 1px solid var(--border); border-radius: 14px;
+      padding: 18px; font-size: 12px; color: var(--muted);
+      margin: 30px 0;
+    }
+    footer {
+      border-top: 1px solid var(--border); text-align: center;
+      padding: 25px 0 35px; color: var(--muted); font-size: 11px;
+    }
+    @media (max-width: 600px) {
+      .hero { padding-top: 40px; }
+      .steps { grid-template-columns: 1fr; }
+      h1 { letter-spacing: -2px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">THE $1 EXPERIMENT</div>
+      <div class="badge">A GLOBAL EXPERIMENT</div>
+    </header>
 
-  <section class="card">
-    <div class="label">CAMPAIGN GOAL</div>
-    <div class="goal">$10,000</div>
-    <p class="note">
-      This is the target, not the amount raised.
-      The total raised will be published only when verified.
-    </p>
-  </section>
+    <main>
+      <section class="hero">
+        <div class="eyebrow">One world. One experiment.</div>
+        <h1>What if the world<br>gave <span>$1?</span></h1>
+        <p class="intro">
+          A simple idea with a global reach. If you choose to participate,
+          your voluntary contribution helps this independent experiment grow.
+        </p>
+      </section>
 
-  <section class="card">
-    <div class="label">VOLUNTARY DONATIONS · USDT TRC20</div>
-    <div class="address" id="wallet">TKqhBf7NjVW5jgvLas8ezmeGUUkuksd9PP</div>
+      <section class="card">
+        <div class="label">EXPERIMENT GOAL</div>
+        <div class="goal">$10,000 <small>USD</small></div>
+        <p class="note">A target, not a live fundraising total.</p>
 
-    <button id="copyButton" type="button">Copy Wallet Address</button>
-    <p class="note" id="copyStatus" aria-live="polite"></p>
+        <div class="divider"></div>
 
-    <p class="note">
-      Only send USDT using the TRON (TRC20) network.
-      Donations are voluntary. Never send funds you cannot afford to lose.
-    </p>
-  </section>
+        <div class="label">SUPPORT THE EXPERIMENT</div>
+        <div class="network">USDT · TRON NETWORK · TRC20 ONLY</div>
 
-  <footer>
-    An independent, anonymous-led experiment.<br>
-    No guaranteed returns, rewards, or financial benefits are promised.<br>
-    Blockchain transactions may be publicly traceable.
-  </footer>
-</main>
+        <div class="wallet" id="wallet">
+          TKqhBf7NjVW5jgvLas8ezmeGUUkuksd9PP
+        </div>
 
-<script>
-const button = document.getElementById("copyButton");
-const wallet = document.getElementById("wallet");
-const status = document.getElementById("copyStatus");
+        <button id="copyButton" onclick="copyWallet()">Copy Wallet Address</button>
+        <a class="share" href="https://www.reddit.com/submit" target="_blank" rel="noopener noreferrer">
+          Share the Idea on Reddit
+        </a>
 
-button.addEventListener("click", async () => {
-  const address = wallet.textContent.trim();
+        <p class="small">
+          Participation is completely optional. Only send USDT using the
+          TRON (TRC20) network. Sending other assets or using another network
+          may result in permanent loss.
+        </p>
+      </section>
 
-  try {
-    await navigator.clipboard.writeText(address);
-    status.textContent = "Wallet address copied.";
-  } catch (error) {
-    status.textContent =
-      "Automatic copying is unavailable. Press and hold the address to copy it.";
-  }
-});
-</script>
+      <section>
+        <div class="eyebrow" style="text-align:center">How it works</div>
+        <div class="steps">
+          <div class="step">
+            <div class="number">01 / DISCOVER</div>
+            <h3>Find the experiment</h3>
+            <p>Discover this independent, community-supported idea online.</p>
+          </div>
+          <div class="step">
+            <div class="number">02 / DECIDE</div>
+            <h3>Your choice</h3>
+            <p>If you wish, contribute any amount. There is no required donation.</p>
+          </div>
+          <div class="step">
+            <div class="number">03 / SHARE</div>
+            <h3>Spread the idea</h3>
+            <p>Share the page so others can learn about the experiment.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="disclaimer">
+        <strong style="color:#f7f8fc">Transparency & important information</strong>
+        <p>
+          This is an independent voluntary donation experiment, not an
+          investment, financial product, or promise of a return. Donations
+          are not purchases and are not guaranteed to be refundable.
+          The $10,000 figure is a goal only; no live amount raised is currently
+          displayed or verified on this page.
+        </p>
+        <p>
+          Cryptocurrency transactions may be publicly visible and traceable
+          on the blockchain. This website does not promise anonymity.
+          Please verify the wallet address and network carefully before
+          sending funds.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      THE $1 EXPERIMENT · Independent project · No investment returns promised
+    </footer>
+  </div>
+
+  <script>
+    function copyWallet() {
+      const address = document.getElementById("wallet").innerText.trim();
+      const button = document.getElementById("copyButton");
+
+      function copied() {
+        button.innerText = "Address Copied!";
+        setTimeout(() => button.innerText = "Copy Wallet Address", 2000);
+      }
+
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(address).then(copied).catch(() => fallbackCopy(address, button));
+      } else {
+        fallbackCopy(address, button);
+      }
+    }
+
+    function fallbackCopy(address, button) {
+      const field = document.createElement("textarea");
+      field.value = address;
+      field.style.position = "fixed";
+      field.style.opacity = "0";
+      document.body.appendChild(field);
+      field.select();
+
+      try {
+        document.execCommand("copy");
+        button.innerText = "Address Copied!";
+        setTimeout(() => button.innerText = "Copy Wallet Address", 2000);
+      } catch (e) {
+        alert("Please copy the wallet address manually.");
+      }
+
+      document.body.removeChild(field);
+    }
+  </script>
 </body>
 </html>
