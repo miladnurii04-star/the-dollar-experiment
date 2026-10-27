@@ -4,18 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#090b12">
-  <meta name="description" content="The $1 Experiment — a global voluntary donation experiment. Every contribution is optional.">
+  <meta name="description" content="The $1 Experiment — a voluntary global donation experiment.">
   <title>The $1 Experiment | One World, One Dollar</title>
+
   <style>
     * { box-sizing: border-box; }
+
     :root {
       --bg: #090b12;
       --panel: #111522;
       --text: #f7f8fc;
       --muted: #9ba4b7;
       --green: #a3ffbf;
-      --border: rgba(255,255,255,.1);
+      --border: rgba(255,255,255,.12);
     }
+
     body {
       margin: 0;
       background:
@@ -25,101 +28,241 @@
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.6;
     }
-    .wrap { width: min(920px, 92%); margin: auto; }
+
+    .wrap {
+      width: min(920px, 92%);
+      margin: auto;
+    }
+
     header {
-      display: flex; justify-content: space-between; align-items: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
       padding: 24px 0;
     }
-    .logo { font-size: 14px; font-weight: 800; letter-spacing: 2px; }
+
+    .logo {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+    }
+
     .badge {
-      border: 1px solid var(--border); border-radius: 99px;
-      padding: 7px 12px; font-size: 11px; color: var(--green);
+      border: 1px solid var(--border);
+      border-radius: 99px;
+      padding: 7px 10px;
+      font-size: 10px;
+      color: var(--green);
     }
-    .hero { text-align: center; padding: 60px 0 35px; }
+
+    .hero {
+      text-align: center;
+      padding: 55px 0 30px;
+    }
+
     .eyebrow {
-      color: var(--green); text-transform: uppercase;
-      letter-spacing: 3px; font-size: 11px; font-weight: bold;
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+      font-weight: bold;
     }
+
     h1 {
-      font-size: clamp(42px, 9vw, 82px);
-      line-height: 1.02; letter-spacing: -3px;
+      font-size: clamp(42px, 9vw, 78px);
+      line-height: 1.04;
+      letter-spacing: -2px;
       margin: 22px 0;
     }
+
     h1 span { color: var(--green); }
+
     .intro {
-      color: var(--muted); max-width: 570px;
-      margin: 0 auto; font-size: 17px;
+      color: var(--muted);
+      max-width: 570px;
+      margin: auto;
+      font-size: 16px;
     }
+
     .card {
       background: rgba(17,21,34,.94);
-      border: 1px solid var(--border); border-radius: 22px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
       padding: clamp(22px, 5vw, 38px);
-      margin: 25px auto; max-width: 650px;
+      margin: 25px auto;
+      max-width: 650px;
       box-shadow: 0 20px 80px rgba(0,0,0,.22);
     }
-    .label { color: var(--muted); font-size: 12px; letter-spacing: 1px; }
-    .goal {
-      font-size: clamp(42px, 10vw, 64px); font-weight: 800;
-      letter-spacing: -2px; margin: 5px 0 0;
+
+    .label {
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 1px;
     }
-    .goal small { font-size: 16px; color: var(--muted); letter-spacing: 0; }
-    .note { font-size: 12px; color: var(--muted); margin-top: 0; }
-    .divider { height: 1px; background: var(--border); margin: 26px 0; }
+
+    .goal {
+      font-size: clamp(42px, 10vw, 62px);
+      font-weight: 800;
+      letter-spacing: -2px;
+      margin: 5px 0 0;
+    }
+
+    .goal small {
+      font-size: 15px;
+      color: var(--muted);
+      letter-spacing: 0;
+    }
+
+    .note {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 0;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 25px 0;
+    }
+
     .network {
-      display: inline-block; color: var(--green);
+      display: inline-block;
+      color: var(--green);
       background: rgba(163,255,191,.08);
       border: 1px solid rgba(163,255,191,.2);
-      border-radius: 7px; padding: 5px 9px;
-      font-size: 11px; font-weight: bold; margin: 10px 0 14px;
+      border-radius: 7px;
+      padding: 6px 9px;
+      font-size: 11px;
+      font-weight: bold;
+      margin: 12px 0 18px;
     }
+
+    .qr-box {
+      text-align: center;
+      margin: 8px auto 20px;
+    }
+
+    .qr-box img {
+      display: block;
+      width: 220px;
+      height: 220px;
+      max-width: 100%;
+      margin: 12px auto;
+      padding: 10px;
+      background: #fff;
+      border-radius: 12px;
+    }
+
+    .qr-caption {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
     .wallet {
-      overflow-wrap: anywhere; background: #090c14;
-      border: 1px solid var(--border); border-radius: 10px;
-      padding: 15px; color: #d8deeb; font-size: 13px;
+      overflow-wrap: anywhere;
+      background: #090c14;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 15px;
+      color: #d8deeb;
+      font-size: 13px;
       line-height: 1.8;
+      font-family: monospace;
     }
+
     button, .share {
-      display: block; width: 100%; border: 0; border-radius: 10px;
-      padding: 15px; font-size: 14px; font-weight: bold;
-      cursor: pointer; text-align: center; text-decoration: none;
+      display: block;
+      width: 100%;
+      border-radius: 10px;
+      padding: 15px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
     }
+
     button {
-      margin-top: 12px; background: var(--green); color: #08130c;
+      margin-top: 12px;
+      background: var(--green);
+      color: #08130c;
+      border: 0;
     }
+
     .share {
-      margin-top: 10px; color: var(--text);
-      border: 1px solid var(--border); background: transparent;
+      margin-top: 10px;
+      color: var(--text);
+      border: 1px solid var(--border);
+      background: transparent;
     }
-    .small { font-size: 12px; color: var(--muted); margin-top: 13px; }
+
+    .small {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 13px;
+    }
+
     .steps {
-      display: grid; grid-template-columns: repeat(3,1fr);
-      gap: 12px; margin: 40px 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 35px 0;
     }
+
     .step {
-      border: 1px solid var(--border); border-radius: 14px;
-      padding: 18px; background: rgba(255,255,255,.025);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      background: rgba(255,255,255,.025);
     }
-    .number { color: var(--green); font-size: 12px; font-weight: bold; }
-    .step h3 { font-size: 15px; margin: 9px 0 5px; }
-    .step p { font-size: 12px; color: var(--muted); margin: 0; }
+
+    .number {
+      color: var(--green);
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .step h3 {
+      font-size: 15px;
+      margin: 9px 0 5px;
+    }
+
+    .step p {
+      font-size: 12px;
+      color: var(--muted);
+      margin: 0;
+    }
+
     .disclaimer {
-      border: 1px solid var(--border); border-radius: 14px;
-      padding: 18px; font-size: 12px; color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      font-size: 12px;
+      color: var(--muted);
       margin: 30px 0;
     }
+
     footer {
-      border-top: 1px solid var(--border); text-align: center;
-      padding: 25px 0 35px; color: var(--muted); font-size: 11px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 25px 0 35px;
+      color: var(--muted);
+      font-size: 11px;
     }
+
     @media (max-width: 600px) {
-      .hero { padding-top: 40px; }
+      .hero { padding-top: 35px; }
       .steps { grid-template-columns: 1fr; }
-      h1 { letter-spacing: -2px; }
+      header { align-items: flex-start; }
+      h1 { letter-spacing: -1px; }
     }
   </style>
 </head>
+
 <body>
   <div class="wrap">
+
     <header>
       <div class="logo">THE $1 EXPERIMENT</div>
       <div class="badge">A GLOBAL EXPERIMENT</div>
@@ -128,29 +271,60 @@
     <main>
       <section class="hero">
         <div class="eyebrow">One world. One experiment.</div>
+
         <h1>What if the world<br>gave <span>$1?</span></h1>
+
         <p class="intro">
           A simple idea with a global reach. If you choose to participate,
           your voluntary contribution helps this independent experiment grow.
+          You can also share the idea without donating.
         </p>
       </section>
 
       <section class="card">
         <div class="label">EXPERIMENT GOAL</div>
+
         <div class="goal">$10,000 <small>USD</small></div>
-        <p class="note">A target, not a live fundraising total.</p>
+
+        <p class="note">
+          This is a target, not a live total raised.
+        </p>
 
         <div class="divider"></div>
 
         <div class="label">SUPPORT THE EXPERIMENT</div>
-        <div class="network">USDT · TRON NETWORK · TRC20 ONLY</div>
 
-        <div class="wallet" id="wallet">
-          TKqhBf7NjVW5jgvLas8ezmeGUUkuksd9PP
+        <div class="network">
+          USDT · TRON NETWORK · TRC20 ONLY
         </div>
 
-        <button id="copyButton" onclick="copyWallet()">Copy Wallet Address</button>
-        <a class="share" href="https://www.reddit.com/submit" target="_blank" rel="noopener noreferrer">
+        <div class="qr-box">
+          <p class="label">SCAN TO VIEW WALLET ADDRESS</p>
+
+          <img
+            src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&amp;data=TKqhBf7NjVW5jgvLas8ezmeGUUkuksd9PP"
+            alt="QR code containing the USDT TRC20 wallet address"
+            width="220"
+            height="220"
+          >
+
+          <p class="qr-caption">
+            Scan the QR code and verify the address before sending.
+          </p>
+        </div>
+
+        <div class="wallet" id="wallet">TKqhBf7NjVW5jgvLas8ezmeGUUkuksd9PP</div>
+
+        <button id="copyButton" type="button" onclick="copyWallet()">
+          Copy Wallet Address
+        </button>
+
+        <a
+          class="share"
+          href="https://www.reddit.com/submit"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Share the Idea on Reddit
         </a>
 
@@ -163,39 +337,50 @@
 
       <section>
         <div class="eyebrow" style="text-align:center">How it works</div>
+
         <div class="steps">
           <div class="step">
             <div class="number">01 / DISCOVER</div>
             <h3>Find the experiment</h3>
-            <p>Discover this independent, community-supported idea online.</p>
+            <p>Discover this independent idea online.</p>
           </div>
+
           <div class="step">
             <div class="number">02 / DECIDE</div>
             <h3>Your choice</h3>
             <p>If you wish, contribute any amount. There is no required donation.</p>
           </div>
+
           <div class="step">
             <div class="number">03 / SHARE</div>
             <h3>Spread the idea</h3>
-            <p>Share the page so others can learn about the experiment.</p>
+            <p>Share this page so others can learn about the experiment.</p>
           </div>
         </div>
       </section>
 
       <section class="disclaimer">
-        <strong style="color:#f7f8fc">Transparency & important information</strong>
+        <strong style="color:#f7f8fc">
+          Transparency &amp; important information
+        </strong>
+
         <p>
           This is an independent voluntary donation experiment, not an
-          investment, financial product, or promise of a return. Donations
-          are not purchases and are not guaranteed to be refundable.
-          The $10,000 figure is a goal only; no live amount raised is currently
-          displayed or verified on this page.
+          investment or a promise of financial returns. Donations are
+          voluntary and are not guaranteed to be refundable. The $10,000
+          figure is a goal only; no live amount raised is currently displayed
+          or verified on this page.
         </p>
+
         <p>
           Cryptocurrency transactions may be publicly visible and traceable
           on the blockchain. This website does not promise anonymity.
-          Please verify the wallet address and network carefully before
-          sending funds.
+          Always verify the wallet address and network before sending funds.
+        </p>
+
+        <p>
+          The QR code is generated by an external service. If it does not
+          load, use the wallet address shown above and verify it carefully.
         </p>
       </section>
     </main>
@@ -212,11 +397,17 @@
 
       function copied() {
         button.innerText = "Address Copied!";
-        setTimeout(() => button.innerText = "Copy Wallet Address", 2000);
+        setTimeout(function() {
+          button.innerText = "Copy Wallet Address";
+        }, 2000);
       }
 
       if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(address).then(copied).catch(() => fallbackCopy(address, button));
+        navigator.clipboard.writeText(address)
+          .then(copied)
+          .catch(function() {
+            fallbackCopy(address, button);
+          });
       } else {
         fallbackCopy(address, button);
       }
@@ -233,8 +424,10 @@
       try {
         document.execCommand("copy");
         button.innerText = "Address Copied!";
-        setTimeout(() => button.innerText = "Copy Wallet Address", 2000);
-      } catch (e) {
+        setTimeout(function() {
+          button.innerText = "Copy Wallet Address";
+        }, 2000);
+      } catch (error) {
         alert("Please copy the wallet address manually.");
       }
 
@@ -242,4 +435,4 @@
     }
   </script>
 </body>
-  </html>
+</html>
